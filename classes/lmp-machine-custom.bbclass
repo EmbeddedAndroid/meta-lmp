@@ -110,8 +110,8 @@ IMAGE_BOOT_FILES_apalis-imx6 = "boot.scr uEnv.txt SPL;u-boot.imx-spl ${MACHINE_A
 KERNEL_IMAGETYPE_apalis-imx6 = "fitImage"
 KERNEL_CLASSES_apalis-imx6 = " kernel-fitimage "
 OSTREE_KERNEL_apalis-imx6 = "${KERNEL_IMAGETYPE}-${INITRAMFS_IMAGE}-${MACHINE}-${MACHINE}"
-UBOOT_DTB_LOADADDRESS_colibri-imx6 = "0x12f00000"
-UBOOT_RD_LOADADDRESS_colibri-imx7 = "0x13000000"
+UBOOT_DTB_LOADADDRESS_apalis-imx6 = "0x12f00000"
+UBOOT_RD_LOADADDRESS_apalis-imx6 = "0x13000000"
 
 # cubox-i (hummingboard)
 OSTREE_KERNEL_ARGS_append_cubox-i = " console=tty1 console=ttymxc0,115200"
