@@ -1,0 +1,43 @@
+From fbecb4e81892c25c6abea580846304b78ec83aff Mon Sep 17 00:00:00 2001
+From: Tyler Baker <tyler@foundries.io>
+Date: Tue, 5 Mar 2019 21:08:25 -0800
+Subject: [PATCH] apalis_imx6 run distro bootcmd by default
+
+Signed-off-by: Tyler Baker <tyler@foundries.io>
+---
+ include/configs/apalis_imx6.h | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/include/configs/apalis_imx6.h b/include/configs/apalis_imx6.h
+index 71dfeb56f5..42d164c60a 100644
+--- a/include/configs/apalis_imx6.h
++++ b/include/configs/apalis_imx6.h
+@@ -180,6 +180,7 @@
+         func(DHCP, dhcp, na)
+ #include <config_distro_bootcmd.h>
+ #include <config_distro_defaults.h>
++#define CONFIG_BOOTCOMMAND "setenv fdtfile imx6q-apalis-ixora-v1.1.dtb && run distro_bootcmd;"
+ #undef CONFIG_ISO_PARTITION
+ #else
+ #define BOOTENV
+@@ -249,7 +250,7 @@
+ 		"${fdt_file} && setenv dtbparam \" - ${fdt_addr_r}\" && true\0"
+ 
+ #ifndef CONFIG_TDX_APALIS_IMX6_V1_0
+-#define FDT_FILE "imx6q-apalis-eval.dtb"
++#define FDT_FILE "imx6q-apalis-ixora-v1.1.dtb"
+ #define FDT_FILE_V1_0 "imx6q-apalis_v1_0-eval.dtb"
+ #else
+ #define FDT_FILE "imx6q-apalis_v1_0-eval.dtb"
+@@ -265,7 +266,7 @@
+ 	"defargs=vmalloc=400M user_debug=30\0" \
+ 	"dfu_alt_info=" DFU_ALT_EMMC_INFO "\0" \
+ 	EMMC_BOOTCMD \
+-	"fdt_file=" FDT_FILE "\0" \
++	"fdtfile=" FDT_FILE "\0" \
+ 	"fdt_fixup=;\0" \
+ 	MEM_LAYOUT_ENV_SETTINGS \
+ 	NFS_BOOTCMD \
+-- 
+2.17.2 (Apple Git-113)
+
