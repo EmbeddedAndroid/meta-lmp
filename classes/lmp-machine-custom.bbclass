@@ -105,10 +105,8 @@ WKS_FILE_sota_cl-som-imx7 = "sdimage-imx7-spl-sota.wks"
 # Toradex Apalis iMX6 (support both NAND and eMMC targets with one single image)
 OSTREE_KERNEL_ARGS_append_apalis-imx6 = " console=tty1 console=ttymxc0,115200"
 EXTRA_IMAGEDEPENDS_append_apalis-imx6 = " u-boot-script-toradex"
-KERNEL_DEVICETREE_append_apalis_imx6 = "imx6q-apalis-eval.dtb \
-    imx6q-apalis-ixora-v1.1.dtb \
-    imx6q-apalis-ixora.dtb"
-IMAGE_BOOT_FILES_apalis-imx6 = "boot.scr uEnv.txt"
+KERNEL_DEVICETREE_append_apalis_imx6 = "imx6q-apalis-ixora-v1.1.dtb"
+IMAGE_BOOT_FILES_apalis-imx6 = "boot.scr uEnv.txt SPL;u-boot.imx-spl ${MACHINE_ARCH}/*;${MACHINE_ARCH}"
 KERNEL_IMAGETYPE_apalis-imx6 = "fitImage"
 KERNEL_CLASSES_apalis-imx6 = " kernel-fitimage "
 OSTREE_KERNEL_apalis-imx6 = "${KERNEL_IMAGETYPE}-${INITRAMFS_IMAGE}-${MACHINE}-${MACHINE}"
