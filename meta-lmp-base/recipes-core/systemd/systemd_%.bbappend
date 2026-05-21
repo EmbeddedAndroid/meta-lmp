@@ -28,7 +28,6 @@ PACKAGECONFIG ?= " \
     openssl \
     quotacheck \
     pstore \
-    p11kit \
     randomseed \
     resolved \
     serial-getty-generator \
